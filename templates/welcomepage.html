@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="welcome-page">
+    <h1 class="text-center">Select Your Destination</h1>
+
+    <div class="destination-container">
+        {% for destination in destinations %}
+        <div class="destination-box" onclick="toggleSelection(this)">
+            <img src="{{ url_for('static', filename='images/' + destination.image) }}" alt="{{ destination.name }}">
+            <p>{{ destination.name }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- "Let's Go" Button -->
+
+<button id="lets-go-btn" onclick="proceed()" disabled>Let's Go</button>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/welcome.js') }}"></script>
+{% endblock %}

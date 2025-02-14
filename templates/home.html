@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Welcome to the Home Page</h1>
+<p>Explore our travel optimization features.</p>
+
+<!-- Interactive Box -->
+<div class="interactive-box" onclick="redirectToLogin()"> 
+    <p>Wanna plan your day?</p>
+</div>
+
+{% endblock %}
+
+<script>
+function redirectToLogin() {
+    window.location.href = "{{ url_for('login') }}"; // Redirect to the login page
+}
+</script>
